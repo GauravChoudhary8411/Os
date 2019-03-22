@@ -48,7 +48,7 @@ void priority(){
 	}
 	printf("\n\n\nProcesses in the ready queue are \n\n");
 	for(p.i=1;p.i<=p.n;p.i++){
-	if(p.pr[p.i]!=p.count++){
+	if(p.pr[p.i]!=p.count){
 	p.pr[p.i]=2;
 	printf("\nProcess Number\t\t\tBurst Time\t\t\tArrival Time\t\t\tPriority\n");
 	printf("    %d\t\t\t\t    %d\t\t\t\t     %d\t\t\t\t    %d\n",p.i,p.b[p.i],p.a[p.i],p.pr[p.i]);	
