@@ -54,6 +54,7 @@ void priority(){
 	printf("    %d\t\t\t\t    %d\t\t\t\t     %d\t\t\t\t    %d\n",p.i,p.b[p.i],p.a[p.i],p.pr[p.i]);	
 		}
 	}
+	//Editing from my second account
 }
 int main()
 {
