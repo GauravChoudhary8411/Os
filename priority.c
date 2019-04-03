@@ -91,7 +91,7 @@ void waiting(){
 }
 int main()
 {
-	float k=0;
+	float k=0,m=0;
 	getdata();
 	display();
 	priority();
@@ -100,7 +100,10 @@ int main()
 	waiting();
 	for(p.i=1;p.i<=p.n;p.i++){
 	k=k+p.tat[p.i];
+	m=m+p.wat[p.i];
 	}
 	k=k/p.n;
-	printf("Average waiting time : %f",k);
+	m=m/p.n;
+	printf("Average turnaround time : %f",k);
+	printf("\nAverage waiting time : %f",p);
 }
