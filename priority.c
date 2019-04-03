@@ -4,7 +4,7 @@
 struct process
 {
 	int i,j,n,count;
-	int a[1000],b[1000],pr[1000],com[1000];
+	int a[1000],b[1000],pr[1000],com[1000],tat[1000],wat[1000];
 	char yes;
 }p;
 void getdata()
@@ -74,10 +74,33 @@ void completion(){
 	printf("    %d\t\t\t    %d\t\t\t     %d\t\t\t    %d\t\t\t     %d\n",p.i,p.b[p.i],p.a[p.i],p.pr[p.i],p.com[p.i]);	
 	}
 }
+void turnaround()
+{
+	for(p.i=1;p.i<=p.n;p.i++){
+	p.tat[p.i]=p.com[p.i]-p.a[p.i];
+	printf("\nProcess Number\t\tBurst Time\t\tArrival Time\t\tPriority\t\tTurnaround Time\n");
+	printf("    %d\t\t\t    %d\t\t\t     %d\t\t\t    %d\t\t\t     %d\n",p.i,p.b[p.i],p.a[p.i],p.pr[p.i],p.tat[p.i]);
+	}
+}
+void waiting(){
+	for(p.i=1;p.i<=p.n;p.i++){
+		p.wat[p.i]=p.tat[p.i]-p.b[p.i];
+		printf("\nProcess Number\t\tBurst Time\t\tArrival Time\t\tPriority\t\tWaiting Time\n");
+	    printf("    %d\t\t\t    %d\t\t\t     %d\t\t\t    %d\t\t\t     %d\n",p.i,p.b[p.i],p.a[p.i],p.pr[p.i],p.wat[p.i]);
+	}
+}
 int main()
 {
+	float k=0;
 	getdata();
 	display();
 	priority();
 	completion();
+	turnaround();
+	waiting();
+	for(p.i=1;p.i<=p.n;p.i++){
+	k=k+p.tat[p.i];
+	}
+	k=k/p.n;
+	printf("Average waiting time : %f",k);
 }
