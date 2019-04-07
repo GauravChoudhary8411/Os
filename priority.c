@@ -171,12 +171,12 @@ void waiting(){
 int main()
 {
 	float k=0,m=0;
-	getdata();
-	display();
-	priority();
-	timeslice();
-	turnaround();
-	waiting();
+	getdata();		//funtion call for calling getdata function
+	display();		//funtion call for calling display function
+	priority();		//funtion call for calling priority function
+	timeslice();	//funtion call for calling timeslice function
+	turnaround();	//funtion call for calling turnaround function and calculating Turnaround time
+	waiting();		//funtion call for calling waiting function
 	for(p.i=1;p.i<=p.n;p.i++){
 	//storing the value in k and m for turnaound time and waiting time respectively
 	k=k+p.tat[p.i];
