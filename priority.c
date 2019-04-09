@@ -39,7 +39,7 @@ D:	printf("Enter the Arrival Time for process %d : ",p.i);
 	for(p.i=1;p.i<=p.n;p.i++){
 E:	printf("Enter the Priority for process %d : ",p.i);
 	scanf("%d",&p.pr[p.i]);
-	if(p.pr[p.i]<0){
+	if(p.pr[p.i]<=0){
 		printf("Invalid Input try again\n");
 		goto E ;
 		}
