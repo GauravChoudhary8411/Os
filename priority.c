@@ -11,22 +11,38 @@ struct process
 void getdata()
 {
 	printf("**********************************WELCOME TO PREEMTIVE PRIORITY SCHEDULING ALGORITHM***********************************\n\n\n");
-	printf("Enter the number of processes you want : ");
+B:	printf("Enter the number of processes you want : ");
 	scanf("%d",&p.n);
+	if(p.n<=0){
+		printf("Invalid Input try again\n");
+		goto B;
+	}
 	
 	for(p.i=1;p.i<=p.n;p.i++){
-	printf("Enter the Burst Time for process %d : ",p.i);
+C:	printf("Enter the Burst Time for process %d : ",p.i);
 	scanf("%d",&p.b[p.i]);
+	if(p.b[p.i]<=0){
+		printf("Invalid Input try again\n");
+		goto C;
 	}
+}
 	
 	for(p.i=1;p.i<=p.n;p.i++){
-	printf("Enter the Arrival Time for process %d : ",p.i);
+D:	printf("Enter the Arrival Time for process %d : ",p.i);
 	scanf("%d",&p.a[p.i]);
+	if(p.a[p.i]<0){
+		printf("Invalid Input try again\n");
+		goto D;
 	}
+}
 	
 	for(p.i=1;p.i<=p.n;p.i++){
-	printf("Enter the Priority for process %d : ",p.i);
+E:	printf("Enter the Priority for process %d : ",p.i);
 	scanf("%d",&p.pr[p.i]);
+	if(p.n<0){
+		printf("Invalid Input try again\n");
+		goto E ;
+		}
 	}
 }
 void display()
@@ -40,6 +56,11 @@ void priority(){
 	p.count=0;
 A:	printf("Enter the process number you want to execute : ");
 	scanf("%d",&p.i);
+	if(p.i<=0||p.i>p.n){
+		printf("Invalid Input Try Again\n");
+		//goto used to redirect the user to feed the process number
+		goto A;
+	}
 	p.pr[p.i]==0;
 	if(p.pr[p.i]==0){
 	p.pr[p.i]+=1;
